@@ -11,6 +11,7 @@ variables:
 
 
 pool:
+  name: 'Local'
   vmImage: ubuntu-latest
 
 steps:
