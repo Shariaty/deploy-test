@@ -6,6 +6,11 @@
 trigger:
 - master
 
+variables:
+  sourcePath: '/'
+  buildPath: '$(sourcePath)/build'
+
+
 pool:
   name: 'local'
   vmImage: ubuntu-latest
@@ -23,8 +28,8 @@ steps:
 
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(Build.BinariesDirectory)'
-    includeRootFolder: true
+    rootFolderOrFile: '$(buildPath)'
+    includeRootFolder: false
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true
