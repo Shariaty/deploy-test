@@ -49,4 +49,4 @@ steps:
     azureSubscription: 'GNG-5300-Service-Account'
     appType: 'webApp'
     WebAppName: 'gng-5300-react-app'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
